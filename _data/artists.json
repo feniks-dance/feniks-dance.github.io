@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Мария Раевская",
+    "image": "/img/artists/maria.png",
+    "index": 0
+  },
+  {
+    "name": "Оксана Стратулат",
+    "image": "/img/artists/oks.jpg",
+    "index": 1
+  },
+  {
+    "name": "Евгения Рогозкина",
+    "image": "/img/artists/zena.jpg",
+    "index": 2
+  },
+  {
+    "name": "Екатерина Каратыщева",
+    "image": "/img/artists/katya.jpg",
+    "index": 3
+  },
+  {
+    "name": "Наталья Голова",
+    "image": "/img/artists/nata.jpg",
+    "index": 5
+  },
+  {
+    "name": "Владимир Ломачевский",
+    "image": "/img/artists/vovan.jpg",
+    "index": 6
+  },
+  {
+    "name": "Марина Семенова",
+    "image": "/img/artists/marina.jpg",
+    "index": 3
+  },
+  {
+    "name": "Давид Степанян",
+    "image": "/img/artists/david.jpg",
+    "index": 3
+  },
+  {
+    "name": "Александр Суховский",
+    "image": "/img/artists/alex.jpg",
+    "index": 7
+  }
+]

@@ -1,0 +1,15 @@
+<div class="logo col-md-12 col-lg-12 color">
+  <a href="">
+    <nobr>Feniks Dance Show</nobr>
+  </a>
+</div>
+<nav class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nav-links undefined">
+  <a ng-class="{'active': page == '{{site.baseurl}}/'}" href="{{site.baseurl}}/" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Главная</a>
+  <a ng-class="{'active': page == '/about/'}" href="{{site.baseurl}}/about/" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">О нас</a>
+  <!--a(class="col-xs-2 col-sm-2 col-md-2 col-lg-2" ng-class="{'active': page=='/news'}" href="news").-->
+  <!--  Новости-->
+  <a ng-class="{'active': page =='/photo/'}" href="{{site.baseurl}}/photo/" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Фото</a>
+  <a ng-class="{'active': page == '{{site.baseurl}}/video/'}" href="{{site.baseurl}}/video/" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Видео</a>
+  <a ng-class="{'active': page == '{{site.baseurl}}/contacts/'}" href="{{site.baseurl}}/contacts/" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Контакты</a>
+  <a ng-class="{'blink': boxBlink,'active': page == '{{site.baseurl}}/box/'}" href="{{site.baseurl}}/box/" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 the-box">The box</a>
+</nav>

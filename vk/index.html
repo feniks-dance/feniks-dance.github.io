@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+  <title>Albums getter</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="content-language" content="ru">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="http://yastatic.net/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="http://yastatic.net/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    (function (window) {
+      window.urlparse = function (str)
+      {
+        console.info("Str: ", str)
+        if (!str) {
+          return {};
+        }
+        if (str.indexOf("#") !== -1) {
+          str = str.substr(str.indexOf("#") + 1);
+        }
+        var res = {}, pair, pairs = str.split("&");
+        for (var i = 0; i < pairs.length; i++) {
+          pair = pairs[i].split("=");
+          res[pair[0]] = pair[1];
+        }
+        return res;
+      }
+      window.hashProcess = function () {
+        console.info("hashProcess: ", window.urlparse(window.location.href));
+        res = window.urlparse(window.location.href);
+        if (res.access_token) {
+          $("#access_token").val(res.access_token);
+        }
+      };
+      window.parseLink = function (link) {
+        var regexp = /album([-]?\d*)_(\d*)/,
+          matches = link.match(regexp);
+        if (matches == null) {
+          return;
+        }
+        if (matches.length == 3) {
+          $("#owner_id").val(matches[1]);
+          $("#album_id").val(matches[2]);
+        }
+        console.info("Parse this: ", link)
+        console.info("Matches: ", matches)
+      }
+      window.getData = function (form, event) {
+        console.info("Get Data: ", arguments);
+        var url = "https://api.vk.com/method/photos.get?" + $('form').serialize() + "&callback=?&v=5.27";
+        $.getJSON(url, function (data) {
+          console.log("Data: ", data);
+          var linkName = "Download your JSON",
+            obj;
+          if (data.error) {
+            linkName += " (error)";
+          } else if (data.response) {
+            obj = data.response.items;
+            $("#preview").html("");
+            for(var i = 0; i < obj.length; i++) {
+              $("#preview").append('<div class="col-xs-6 col-md-3"><a href="#" class="thumbnail">' +
+              '<img src="' + obj[i].photo_604 + '" alt="..."></a></div>')
+              obj[i].index = i;
+            }
+          }
+          data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj, null, 2));
+          $('#download_link').html('<a href="data:' + data + '" download="data.json">' + linkName + '</a>');
+        });
+        event.preventDefault();
+      }
+    })(window)
+  </script>
+</head>
+<body onload="hashProcess()">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h3>Download your album JSON data from VK</h3>
+      <div class="pull-right">
+        <a href="https://vk.com/dev/photos.get" target="_blank">More Info</a>
+      </div>
+      <form action="#" onsubmit="getData(this, event)" role="form">
+        <div class="form-group">
+          <label for="link_to_album">Link to Album</label>
+          <input type="text" class="form-control" id="link_to_album" onchange="parseLink(this.value)" placeholder="link to album...">
+        </div>
+        <div class="form-group">
+          <label for="owner_id">Owner ID</label>
+          <input type="text" required="required" name="owner_id" class="form-control" id="owner_id" placeholder="owner id...">
+        </div>
+        <div class="form-group">
+          <label for="album_id">Album ID</label>
+          <input type="text" required="required" name="album_id" class="form-control" id="album_id" placeholder="album id...">
+        </div>
+        <div class="form-group">
+          <label for="access_token">Access Token</label>
+          <input type="text" required="required" name="access_token" class="form-control" id="access_token" placeholder="access token...">
+        </div>
+        <p>
+          <a href="https://oauth.vk.com/authorize?client_id=3829680&scope=photos&redirect_uri=http://localhost:4000/vk/&display=page&v=5.21&response_type=token">
+            Link for authorization
+          </a>
+        </p>
+        <div class="pull-right" id="download_link"></div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <div id="preview" class="col-lg-12" style="margin-top: 20px;"></div>
+  </div>
+</div>
+</body>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "name": "box",
+    "title": "Пластический спектакль THE BOX",
+    "description": null,
+    "preview": "http://cs622418.vk.me/v622418268/d2c2/T8q8DJdBS-U.jpg",
+    "index": 2
+  },
+  {
+    "id": 2,
+    "name": "photoset",
+    "title": "PHOTOSET",
+    "description": null,
+    "preview": "http://cs622418.vk.me/v622418268/d38f/B7kx-1ZwCCc.jpg",
+    "index": 0
+  },
+  {
+    "id": 1,
+    "name": "laptander",
+    "title": "Гастроли с Еленой Лаптандер",
+    "description": null,
+    "preview": "http://cs622418.vk.me/v622418268/d644/NM6qTF9gEBk.jpg",
+    "index": 4
+  },
+  {
+    "id": 3,
+    "name": "china_tour",
+    "title": "Гастроли в Китай",
+    "description": null,
+    "preview": "http://cs622418.vk.me/v622418268/d5b4/7YxQW3aZqo4.jpg",
+    "index": 3
+  },
+  {
+    "id": 3,
+    "name": "partners",
+    "title": "Сотрудничество",
+    "description": null,
+    "preview": "http://cs623617.vk.me/v623617882/d1c1/cXSAgWm6n5A.jpg",
+    "index": 1
+  },
+  {
+    "id": 4,
+    "name": "ivanovo",
+    "title": "Гастроли в Иваново с Dia Govasary",
+    "description": null,
+    "preview": "http://cs620130.vk.me/v620130882/25bc7/LEAFWfgW9fI.jpg",
+    "index": 5
+  }
+]

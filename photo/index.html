@@ -1,0 +1,27 @@
+---
+layout: default
+title: Feniks Dance Show. Фотоальбомы.
+keywords: гастроли, гастроли в Китай, Елена Лаптандер, the box, feniks, dance, show, photoset
+description: Фотографии с гастролей, постановочный фото с артистами, спектакль "The box".
+---
+<article class="row">
+  <div class="wrapper">
+    <div class="content albums">
+      {% assign sorted_albums = site.data.albums | sort: 'index' %}
+      {% for album in sorted_albums %}
+      <div class="col-xs-6 col-sm-6 col-md-4">
+        <div class="thumbnail album {{{{forloop.index}}}}">
+          <a href="{{site.baseurl}}/photo/{{album.name}}">
+            <div style="overflow:hidden; height:250px; width:100%; text-align:center;">
+              <img src="{{album.preview}}" style="height:auto; width:500px;" img-center=""/>
+            </div>
+          </a>
+          <div style="text-align:center;" class="caption">
+            <h4>{{album.title}}</h4>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</article>

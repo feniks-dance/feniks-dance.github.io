@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://feniks-dance.ru/</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/about</loc>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/photo</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/video</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/contacts</loc>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/box</loc>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/photo/album/4</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/photo/album/3</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/photo/album/1</loc>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://feniks-dance.ru/photo/album/2</loc>
+  <priority>0.64</priority>
+</url>
+</urlset>

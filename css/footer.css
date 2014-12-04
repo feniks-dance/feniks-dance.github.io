@@ -1,0 +1,104 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer nav {
+  background-color: none;
+  height: 50px;
+  text-align: center;
+}
+footer nav div {
+  display: inline-block;
+}
+footer nav .logo {
+  float: right;
+  right: 40px;
+  position: relative;
+}
+footer nav .logo a {
+  position: relative;
+  text-align: center;
+}
+footer nav .logo a img {
+  height: 50px;
+  position: relative;
+  top: -3px;
+}
+footer nav .logo a:visited,
+footer nav .logo a:hover,
+footer nav .logo a:active,
+footer nav .logo a:hover {
+  background-color: transparent;
+  text-decoration: none;
+}
+footer nav .logo a span {
+  font-size: 60px;
+  color: #FFF;
+  line-height: 100px;
+}
+footer nav .links {
+  line-height: 50px;
+}
+footer nav .links .email span,
+footer nav .links .tel span {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #ffffff;
+}
+footer nav .links .email span a,
+footer nav .links .tel span a {
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: 300;
+}
+footer nav .links .email span a:visited,
+footer nav .links .tel span a:visited,
+footer nav .links .email span a:hover,
+footer nav .links .tel span a:hover,
+footer nav .links .email span a:active,
+footer nav .links .tel span a:active,
+footer nav .links .email span a:hover,
+footer nav .links .tel span a:hover,
+footer nav .links .email span a:focus,
+footer nav .links .tel span a:focus {
+  text-decoration: none;
+  color: #ffffff;
+}
+footer nav .links .separator {
+  color: #ffffff;
+  margin: 0 10px;
+}
+footer nav .links span {
+  display: inline-block;
+}
+
+footer .copyright {
+  display: block;
+  position: absolute;
+  color: #fff;
+  font-size: 10px;
+  width: 100%;
+  text-align: center;
+  bottom: 1px;
+}
+
+footer .copyright span {
+  margin-left: 105px;
+}
+
+footer nav .social {
+  position: relative;
+  float: left;
+  line-height: 50px;
+  left: 40px;
+}
+footer nav .social a {
+  margin-right: 5px;
+}
+footer nav .social a img {
+  height: 32px;
+}

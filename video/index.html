@@ -1,0 +1,31 @@
+---
+layout: default
+title: Feniks Dance Show. Видео.
+keywords: Сергеев Денис, feniks, dance, show, феникс, шоу балет, танцоры, репетиция программы, гастроли, гастроли в Китай, гастроли с Еленой Лаптандер
+description: Видео ролики с наших выступлений, репетиций и гастролей.
+---
+
+<article class="row">
+  <div class="wrapper">
+    <div class="content">
+      <div colorbox="colorbox" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 videos">
+        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3" ng-repeat="v in videos">
+          <div class="thumbnail" video-data="[[v]]">
+            <div style="overflow:hidden; width:100%;">
+              <a ng-href="//www.youtube.com/embed/[[v]]??fs=1&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;autohide=1&amp;theme=light"
+                 class="youtube cboxElement">
+                <div style="overflow:hidden; height:[[parentHeight]]; width:100%;">
+                  <img ng-src="http://img.youtube.com/vi/[[v]]/0.jpg"
+                       style="height:auto; width:[[imgWidth]];margin-top:[[imgMarginTop]]"/>
+                </div>
+              </a>
+            </div>
+            <div style="text-align:center;" class="caption">
+              <p valign="valign" class="title">Название</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
