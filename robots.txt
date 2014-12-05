@@ -1,3 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /vk/
+Sitemap: http://feniks-dance.ru/sitemap.xml
+
 User-agent: Aqua_Products
 Disallow: /
 
