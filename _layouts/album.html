@@ -6,11 +6,11 @@ layout: default
     <div class="content photo col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 albums-list-container clearfix">
         <div class="wrapper">
-          <h3><a href="{{site.baseurl}}/photo">Альбомы</a></h3>
+          <h3><a href="/photo">Альбомы</a></h3>
           {% for album in site.data.albums %}
           <p>
-            <a href="{{site.baseurl}}/photo/{{album.name}}"
-               ng-class="{'active': path == '{{site.baseurl}}/photo/{{album.name}}/'}"
+            <a href="/photo/{{album.name}}"
+               ng-class="{'active': path == '/photo/{{album.name}}/'}"
                class="a.class">
               {{album.title}}
             </a>

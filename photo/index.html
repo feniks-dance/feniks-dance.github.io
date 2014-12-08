@@ -11,7 +11,7 @@ description: Фотографии с гастролей, постановочн�
       {% for album in sorted_albums %}
       <div class="col-xs-6 col-sm-6 col-md-4">
         <div class="thumbnail album {{{{forloop.index}}}}">
-          <a href="{{site.baseurl}}/photo/{{album.name}}">
+          <a href="/photo/{{album.name}}">
             <div style="overflow:hidden; height:250px; width:100%; text-align:center;">
               <img src="{{album.preview}}" style="height:auto; width:500px;" img-center=""/>
             </div>
