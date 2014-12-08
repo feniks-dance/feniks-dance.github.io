@@ -1,8 +1,12 @@
-@media (min-width: 1270px) {
-	.container {
+@media (min-width: 1200px) {
+	.container, footer {
 		width: 1280px!important;
 		padding: 0;
 		margin: 0 auto!important;
+	}
+	footer {
+		left: 50%!important;
+		margin-left: -640px!important;
 	}
 }
 
