@@ -24,12 +24,17 @@ angular.module('Feniks', []).config([
       return $scope.groupPhoto = groupPhotos[changePhoto];
     }, 5000);
   }
-  $http.get("https://www.googleapis.com/youtube/v3/search?part=id&channelId=UCgUafpxg3uzUhhMHmzwIfdA&maxResults=10&order=date&key=AIzaSyCOoMERRE9_xHJ94AWLFKpgNDXXzfwqWWw").success(function(response) {
+  $http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCgUafpxg3uzUhhMHmzwIfdA&maxResults=10&order=date&key=AIzaSyCOoMERRE9_xHJ94AWLFKpgNDXXzfwqWWw").success(function(response) {
     angular.forEach(response.items, function(video) {
       if (!video.id.videoId) {
         return;
       }
-      return $scope.videos.push(video.id.videoId);
+      return $scope.videos.push({
+        id: video.id.videoId,
+        title: video.snippet.title,
+        description: video.snippet.description,
+        img: video.snippet.thumbnails.high.url
+      });
     });
     return $timeout(function() {
       return $scope.$broadcast('initColorboxVideo');
@@ -85,30 +90,6 @@ angular.module('Feniks', []).config([
           innerHeight: 390
         });
       });
-    }
-  };
-}).directive('videoData', function($http, $window) {
-  return {
-    restrict: 'A',
-    link: function(scope, elm, attrs) {
-      var img, width;
-      $http.jsonp("http://gdata.youtube.com/feeds/api/videos/" + attrs.videoData + "?v=2&alt=json-in-script&callback=JSON_CALLBACK").success(function(data) {
-        return elm.find(".title").html("<b valign>" + data.entry.title.$t + "</b>");
-      });
-      img = elm.parent().find("img");
-      width = img.parent().width();
-      scope.imgWidth = width + 'px';
-      scope.imgMarginTop = -width * .09375 + 'px';
-      scope.parentHeight = width * .5625 + 'px';
-      return $window.onresize = function(e) {
-        img = elm.parent().find("img");
-        width = img.parent().width();
-        return scope.$apply(function() {
-          scope.imgWidth = width + 'px';
-          scope.imgMarginTop = -width * .09375 + 'px';
-          return scope.parentHeight = width * .5625 + 'px';
-        });
-      };
     }
   };
 }).directive('imgCenter', function() {

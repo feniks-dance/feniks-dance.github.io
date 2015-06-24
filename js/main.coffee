@@ -19,11 +19,16 @@ angular.module('Feniks', []).config([
       $scope.groupPhoto = groupPhotos[changePhoto];
     , 5000)
 
-  $http.get("https://www.googleapis.com/youtube/v3/search?part=id&channelId=UCgUafpxg3uzUhhMHmzwIfdA&maxResults=10&order=date&key=AIzaSyCOoMERRE9_xHJ94AWLFKpgNDXXzfwqWWw").success(
+  $http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCgUafpxg3uzUhhMHmzwIfdA&maxResults=10&order=date&key=AIzaSyCOoMERRE9_xHJ94AWLFKpgNDXXzfwqWWw").success(
     (response) ->
       angular.forEach(response.items, (video) ->
         return if !video.id.videoId
-        $scope.videos.push(video.id.videoId)
+        $scope.videos.push({
+          id:video.id.videoId,
+          title: video.snippet.title,
+          description: video.snippet.description
+          img: video.snippet.thumbnails.high.url
+        })
       )
       $timeout(->
         $scope.$broadcast('initColorboxVideo')
@@ -67,25 +72,6 @@ angular.module('Feniks', []).config([
         innerHeight:390
       )
     )
-).directive('videoData', ($http, $window) ->
-  restrict: 'A'
-  link: (scope, elm, attrs) ->
-    $http.jsonp("http://gdata.youtube.com/feeds/api/videos/#{attrs.videoData}?v=2&alt=json-in-script&callback=JSON_CALLBACK").success((data) ->
-      elm.find(".title").html("<b valign>#{data.entry.title.$t}</b>");
-    )
-    img = elm.parent().find("img")
-    width = img.parent().width()
-    scope.imgWidth = width + 'px'
-    scope.imgMarginTop = -width * .09375 + 'px'
-    scope.parentHeight = width * .5625 + 'px'
-    $window.onresize = (e) ->
-      img = elm.parent().find("img")
-      width = img.parent().width()
-      scope.$apply(->
-        scope.imgWidth = width + 'px'
-        scope.imgMarginTop = -width * .09375 + 'px'
-        scope.parentHeight = width * .5625 + 'px'
-      )
 ).directive('imgCenter', () ->
   {
   restrict: 'A'
