@@ -24,7 +24,7 @@ angular.module('Feniks', []).config([
       return $scope.groupPhoto = groupPhotos[changePhoto];
     }, 5000);
   }
-  $http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCgUafpxg3uzUhhMHmzwIfdA&maxResults=10&order=date&key=AIzaSyAhBGgXJxiZZDvNpbKx-gLhm22E3v6wuFo").success(function(response) {
+  $http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCgUafpxg3uzUhhMHmzwIfdA&maxResults=10&order=date&key=AIzaSyAwgN8e2f4lqGwtIIPp7bcid02EiVtfvH0").success(function(response) {
     angular.forEach(response.items, function(video) {
       if (!video.id.videoId) {
         return;
